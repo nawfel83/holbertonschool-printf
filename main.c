@@ -9,7 +9,7 @@
  */
 int main(void)
 {
-	 _printf("Hello, Holberton!\n");
+	_printf("Hello, Holberton!\n");
 	_printf("Character: %c\n", 'H');
 	_printf("String: %s\n", "Holberton");
 	_printf("Percent: %%\n");
