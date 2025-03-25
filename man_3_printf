@@ -1,0 +1,54 @@
+.\" Manpage for _printf function
+
+.TH _PRINTF 3 "March 25, 2025" "1.0" "Custom Functions"
+
+.SH NAME
+_printf \- custom implementation of printf
+
+.SH SYNOPSIS
+.nf
+int _printf(const char *format, ...);
+
+.SH DESCRIPTION
+The \fB_printf\fR function is a custom implementation of the standard \fBprintf\fR function. It formats and outputs a string to the standard output according to a format string that may include various specifiers.
+The following conversion specifiers are supported:
+
+\*   %c - character  
+\*   %s - string  
+\*   %d - signed integer  
+\*   %i - signed integer  
+\*   %% - percent sign  
+
+The function processes the format string and handles any flags, field width, and precision as necessary, but these features are not fully implemented in the custom version. The only supported flags are:
+
+\*   None (as per the basic functionality).
+
+.SH RETURN VALUE
+On success, \fB_printf\fR returns the number of characters printed (excluding the null byte used to end output to strings). If an error occurs, it returns \-1.
+
+.SH EXAMPLES
+.nf
+Example 1: Basic usage
+
+_printf("Hello, Holberton!\n");
+Output: Hello, Holberton!
+
+Example 2: Using specifiers
+
+_printf("Character: %c\n", 'H');
+Output: Character: H
+
+_printf("String: %s\n", "Holberton");
+Output: String: Holberton
+
+_printf("Percent: %%\n");
+Output: Percent: %
+
+_printf("Number: %d\n", 98);
+Output: Number: 98
+
+.SH DATE
+March 25, 2025
+
+.SH AUTHORS
+Nawfel Laklit
