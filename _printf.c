@@ -15,7 +15,6 @@ int select_print_func(char format, va_list args)
 		{'%', print_percent},
 		{'d', print_integer},
 		{'i', print_integer},
-		{'X', print_hexadecimal},
 		{'\0', NULL}
 	};
 
@@ -48,9 +47,12 @@ int _printf(const char *format, ...)
 
 	while (*format)
 	{
-		if (*format == '%' && *(format + 1))
+		if (*format == '%')
 		{
 			format++;
+			if (*format == '\0')
+				break;
+
 			count += select_print_func(*format, args);
 		}
 		else
