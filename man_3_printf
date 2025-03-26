@@ -13,11 +13,11 @@ int _printf(const char *format, ...);
 The \fB_printf\fR function is a custom implementation of the standard \fBprintf\fR function. It formats and outputs a string to the standard output according to a format string that may include various specifiers.
 The following conversion specifiers are supported:
 
-\*   %c - character  
-\*   %s - string  
-\*   %d - signed integer  
-\*   %i - signed integer  
-\*   %% - percent sign  
+\*	%c - character
+\*	%s - string
+\*	%d - signed integer
+\*	%i - signed integer
+\*	%% - percent sign
 
 The function processes the format string and handles any flags, field width, and precision as necessary, but these features are not fully implemented in the custom version. The only supported flags are:
 
