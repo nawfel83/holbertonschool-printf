@@ -9,10 +9,15 @@
  */
 int main(void)
 {
-	_printf("Hello %c\n", 'A');
-	_printf("Salut %s\n", "toi");
-	_printf("Affiche %%\n");
-	_printf("Invalide %d\n", 42);
+	int len1, len2;
+
+	len1 = _printf("Hello %d!\n", 42);
+	len2 = printf("Hello %d!\n", 42);
+	printf("Lengths: _printf = %d, printf = %d\n\n", len1, len2);
+
+	len1 = _printf("Negative: %d\n", -1234);
+	len2 = printf("Negative: %d\n", -1234);
+	printf("Lengths: _printf = %d, printf = %d\n\n", len1, len2);
 
 	return (0);
 }
