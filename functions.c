@@ -54,6 +54,7 @@ int print_integer(va_list args)
 {
 	long n = va_arg(args, int);
 	int count = 0;
+	int div = 1;
 	unsigned int num;
 
 	if (n < 0)
@@ -73,14 +74,12 @@ int print_integer(va_list args)
 		return (1);
 	}
 
-	int div = 1;
-
 	while (num / div >= 10)
 		div *= 10;
 
 	while (div > 0)
 	{
-		_putchar((num / diviseur) % 10 + '0');
+		_putchar((num / div) % 10 + '0');
 		div /= 10;
 		count++;
 	}
