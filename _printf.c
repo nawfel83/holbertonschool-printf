@@ -8,6 +8,7 @@
  */
 int select_print_func(char format, va_list args)
 {
+	int i = 0;
 	print_func_t print_funcs[] = {
 		{'c', print_char},
 		{'s', print_string},
@@ -16,8 +17,6 @@ int select_print_func(char format, va_list args)
 		{'i', print_integer},
 		{'\0', NULL}
 	};
-
-	int i = 0;
 
 	while (print_funcs[i].type != '\0')
 	{

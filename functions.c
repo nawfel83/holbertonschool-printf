@@ -70,6 +70,7 @@ int print_integer(va_list args)
 	}
 	while (num / div > 9)
 		div *= 10;
+
 	while (div > 0)
 	{
 		_putchar(((num / div) % 10) + '0');
