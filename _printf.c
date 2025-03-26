@@ -1,39 +1,34 @@
 #include "main.h"
-#include <stdarg.h>
-#include <stddef.h>
 
 /**
- * handle_spec - Handles format specifiers
+ * select_print_func - Selects and calls the appropriate print function
  * @format: The format specifier
  * @args: The argument list
  * Return: Number of characters printed
  */
-int handle_spec(char format, va_list args)
+int select_print_func(char format, va_list args)
 {
-	int count = 0;
+	print_func_t print_funcs[] = {
+		{'c', print_char},
+		{'s', print_string},
+		{'%', print_percent},
+		{'d', print_integer},
+		{'i', print_integer},
+		{'\0', NULL}
+	};
 
-	if (format == 'c')
-		count += _putchar(va_arg(args, int));
-	else if (format == 's')
-	{
-		char *str = va_arg(args, char *);
+	int i = 0;
 
-		if (!str)
-			str = "(null)";
-		while (*str)
-			count += _putchar(*str++);
-	}
-	else if (format == 'd' || format == 'i')
-		count += print_number(va_arg(args, int));
-	else if (format == '%')
-		count += _putchar('%');
-	else
+	while (print_funcs[i].type != '\0')
 	{
-		count += _putchar('%');
-		count += _putchar(format);
+		if (print_funcs[i].type == format)
+			return (print_funcs[i].print_func(args));
+		i++;
 	}
 
-	return (count);
+	_putchar('%');
+	_putchar(format);
+	return (2);
 }
 
 /**
@@ -46,7 +41,7 @@ int _printf(const char *format, ...)
 	va_list args;
 	int count = 0;
 
-	if (!format)
+	if (format == NULL)
 		return (-1);
 
 	va_start(args, format);
@@ -56,10 +51,13 @@ int _printf(const char *format, ...)
 		if (*format == '%' && *(format + 1))
 		{
 			format++;
-			count += handle_spec(*format, args);
+			count += select_print_func(*format, args);
 		}
 		else
-			count += _putchar(*format);
+		{
+			_putchar(*format);
+			count++;
+		}
 		format++;
 	}
 
