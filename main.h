@@ -13,6 +13,7 @@ int print_string(va_list args);
 int print_percent(va_list args);
 int _putchar(char c);
 int print_integer(va_list args);
+int print_hexadecimal(va_list args);
 
 /**
  * struct print_func - Structure for printing functions

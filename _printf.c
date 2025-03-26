@@ -15,6 +15,7 @@ int select_print_func(char format, va_list args)
 		{'%', print_percent},
 		{'d', print_integer},
 		{'i', print_integer},
+		{'X', print_hexadecimal},
 		{'\0', NULL}
 	};
 

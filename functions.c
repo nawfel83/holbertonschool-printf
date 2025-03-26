@@ -79,3 +79,42 @@ int print_integer(va_list args)
 	}
 	return (count);
 }
+
+/**
+ * print_hexadecimal - Prints an unsigned integer in hexadecimal (uppercase)
+ * @args: Argument list containing the unsigned integer
+ *
+ * Return: Number of characters printed
+ *
+ * Converts an unsigned integer to hexadecimal and prints it in uppercase.
+ */
+int print_hexadecimal(va_list args)
+{
+	unsigned int n = va_arg(args, unsigned int);
+	char hex_chars[] = "0123456789ABCDEF";
+	char hex[8];
+	int count = 0;
+	int i = 0;
+	int j;
+
+	if (n == 0)
+	{
+		_putchar('0');
+		return (1);
+	}
+
+	while (n != 0)
+	{
+		hex[i] = hex_chars[n % 16];
+		n /= 16;
+		i++;
+	}
+
+	for (j = i - 1; j >= 0; j--)
+	{
+		_putchar(hex[j]);
+		count++;
+	}
+
+	return (count);
+}
