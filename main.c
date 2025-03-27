@@ -9,7 +9,7 @@
  */
 int main(void)
 {
-	int len1, len2;
+	int len, len1, len2;
 
 	len1 = _printf("Hello %d!\n", 42);
 	len2 = printf("Hello %d!\n", 42);
@@ -18,6 +18,11 @@ int main(void)
 	len1 = _printf("Negative: %d\n", -1234);
 	len2 = printf("Negative: %d\n", -1234);
 	printf("Lengths: _printf = %d, printf = %d\n\n", len1, len2);
+
+	len2 = _printf("%");
+	len = printf("%");
+	printf ("%d\n", len);
+	_printf ("%d\n", len2);
 
 	return (0);
 }
