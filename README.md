@@ -61,5 +61,5 @@ valgrind --leak-check=full ./test_printf
 man ./man_3_printf
 
 ## Flowchart
-![Capture d'écran 2025-03-26 180625](https://github.com/user-attachments/assets/c3e0669f-060e-4271-bec9-27009533f5c1)
+
 
