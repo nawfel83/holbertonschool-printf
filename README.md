@@ -62,5 +62,6 @@ valgrind --leak-check=full ./test_printf
 
 
 ## Flowchart
+![image](https://github.com/user-attachments/assets/1a20033d-8812-413c-86ce-3d64dc1905b9)
 
 
