@@ -28,7 +28,7 @@ Support for conversion specifiers:
 - functions.c: Conversion functions
 - _putchar.c: Character write function
 
-## Compilation
+## ⚙️ Compilation
 ```
     gcc -Wall -Wextra -Werror -pedantic -std=gnu89 *.c -o printf
 ```
