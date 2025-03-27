@@ -52,7 +52,7 @@ int _printf(const char *format, ...)
 		{
 			format++;
 			if (*format == '\0')
-				break;
+				return (-1);
 
 			count += select_print_func(*format, args);
 		}
@@ -65,5 +65,5 @@ int _printf(const char *format, ...)
 	}
 
 	va_end(args);
-	return (count-1);
+	return (count);
 }
