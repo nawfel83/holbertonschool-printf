@@ -57,11 +57,11 @@ Checking for memory leaks
 ```
 valgrind --leak-check=full ./test_printf
 ```
-## Man Page 
+## 📜 Man Page 
 ![image](https://github.com/user-attachments/assets/ff79ac1c-25b2-4894-9a43-08a8b76d31d6)
 
 
-## Flowchart
+## 📈 Flowchart
 ![image](https://github.com/user-attachments/assets/1a20033d-8812-413c-86ce-3d64dc1905b9)
 
 
