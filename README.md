@@ -58,7 +58,8 @@ Checking for memory leaks
 valgrind --leak-check=full ./test_printf
 ```
 ## Man Page 
-man ./man_3_printf
+![image](https://github.com/user-attachments/assets/ff79ac1c-25b2-4894-9a43-08a8b76d31d6)
+
 
 ## Flowchart
 
